@@ -20,18 +20,44 @@
 
 
 <body>
-<nav>  
+<nav id="main">  
 
 <a href="images/b_smyth.jpg" title="Handsome">Pic1</a>
 <a href="images/bsmyth.jpg" title="Chocolate">Pic2</a>
 <a href="images/Smyth.jpg" title="Fine">Pic3</a>
 </nav>
-<img id="pic" src="../images/b_smyth.jpg" alt= "Singer" />
+
+<img id="pic" src="images/b_smyth.jpg" alt= "Singer" />
 <p id="caption"> Handsome</p>
 
 
 
 <script>
+window.onload = init;
+
+function init(e)
+{ 
+
+// collect all anchor tags inside of nav
+// add event onto each of them 
+
+var links = document.querySelectorAll('#main a');
+   for(var i=0; i< links.length; i++)
+   
+   {
+	links[i].onclick = changePic;   
+   }
+	
+}
+
+function changePic(e)
+{
+	e.preventDefault();
+	var pic = document.querySelector("#pic");
+	var caption = document.getElementById('caption');
+	pic.src = e.target.href;
+	caption.firstChild.nodeValue = e.target.title;
+}
 </script>
 </body>
 </html>
