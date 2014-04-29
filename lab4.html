@@ -33,24 +33,27 @@
 
 
 <script>
-window.onload = init;
 
-function init(e)
+
+var gallery = {
+
+ 
+ init: function(e)
 { 
 
 // collect all anchor tags inside of nav
 // add event onto each of them 
 
 var links = document.querySelectorAll('#main a');
-   for(var i=0; i< links.length; i++)
-   
+   for(var i=0; i< links.length; i++) 
    {
-	links[i].onclick = changePic;   
+	links[i].onclick = gallery.changePic;   
    }
 	
-}
+},
 
-function changePic(e)
+
+changePic: function (e)
 {
 	e.preventDefault();
 	var pic = document.querySelector("#pic");
@@ -58,6 +61,10 @@ function changePic(e)
 	pic.src = e.target.href;
 	caption.firstChild.nodeValue = e.target.title;
 }
+
+}
+window.onload = gallery.init;
+
 </script>
 </body>
 </html>
