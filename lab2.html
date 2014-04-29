@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>lab2</title>
+
+
+
+
+
+
+<style>
+#pic 3
+	{
+		width:200px;
+	height:300px;
+}
+
+nav a {
+	
+    font: 2em/2 "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	color:#DF2122;
+	padding:1em;
+	
+}
+
+p {
+	font:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+</style>
+<link href="lab2.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <title>lab2</title>
+
+
+</head>
+
+<body>
+
+   <nav id="Singer">
+   <a href="images/b_smyth.jpg" title="Handsome">Pic1</a>
+    <a href="images/bsmyth.jpg" title="Chocolate">Pic2</a>
+     <a href="images/Smyth.jpg" title="Fine">Pic3</a>
+</nav>
+
+<img id="pic" src="images/b_smyth.jpg" alt="js gallery" />
+
+<p id="caption">He is a very talented young man.</p>
+
+<script>
+
+	var singer = document.getElementById('Singer')
+var pic = document.querySelector('#pic');
+var caption= document.querySelector('#caption');
+var links= document.querySelectorAll('#Singer a');
+
+ for(var i=0; i < links.length; i++)
+ 
+{gallery.inkd[0].onclick = gallery.changePic;
+gallery.inkd[1].onclick = gallery.changePic;
+gallery.inkd[2].onclick = gallery.changePic;
+}
+	
+ 
+ 
+function changePic(e)
+
+{
+	e.preventDefault();
+	pic.src=e.target.href;
+	caption.firstChild.nodeValue=e.target.title;
+	
+}
+
+	
+
+</script>
+</body>
+</html>
